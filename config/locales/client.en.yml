@@ -1,0 +1,7 @@
+en:
+  js:
+    login:
+      codeberg:
+        message: 'Authenticating with Codeberg'
+        name: 'Codeberg'
+        title: 'Log in with Codeberg'

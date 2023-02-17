@@ -1,0 +1,14 @@
+plugins:
+  enable_codeberg_login:
+    default: false
+
+  codeberg_client_id:
+    client: false
+    default: ''
+    validator: ValidateCodebergToggle
+
+  codeberg_secret:
+    client: false
+    default: ''
+    secret: true
+    validator: ValidateCodebergToggle
