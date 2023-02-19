@@ -2,7 +2,7 @@
 
 # name: discourse-codeberg-auth
 # about: Allows users to sign in with their Codeberg account
-# version: 0.0.1
+# version: 0.0.2
 # author: Wolftallemo
 # url: https://github.com/Wolftallemo/discourse-codeberg-auth
 
