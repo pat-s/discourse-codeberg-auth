@@ -11,6 +11,8 @@ enabled_site_setting :enable_codeberg_login
 require 'base64'
 require_relative 'lib/validators/CodebergLoginToggle'
 
+register_svg_icon 'codeberg-auth-codeberg-logo' if respond_to?(:register_svg_icon)
+
 class CodebergAuthenticator < Auth::ManagedAuthenticator
   class CodebergStrategy < OmniAuth::Strategies::OAuth2
     option :name, 'codeberg'
@@ -74,4 +76,4 @@ class CodebergAuthenticator < Auth::ManagedAuthenticator
   end
 end
 
-auth_provider authenticator: CodebergAuthenticator.new
+auth_provider authenticator: CodebergAuthenticator.new, icon: 'codeberg-auth-codeberg-logo'
