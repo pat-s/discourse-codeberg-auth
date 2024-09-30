@@ -2,8 +2,8 @@
 
 # name: discourse-codeberg-auth
 # about: Allows users to sign in with their Codeberg account
-# version: 0.0.2
-# author: Regalijan
+# version: 1.0.0
+# authors: Regalijan
 # url: https://github.com/Regalijan/discourse-codeberg-auth
 
 enabled_site_setting :enable_codeberg_login
