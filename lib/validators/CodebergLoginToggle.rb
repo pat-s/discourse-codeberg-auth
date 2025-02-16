@@ -12,6 +12,6 @@ class ValidateCodebergToggle
   end
 
   def error_message
-    I18n.t('discourse_codeberg_login.errors.cannot_remove')
+    I18n.t('discourse_codeberg_auth.errors.cannot_remove')
   end
 end
