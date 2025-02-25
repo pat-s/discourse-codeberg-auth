@@ -1,14 +1,14 @@
 plugins:
-  enable_codeberg_login:
+  enable_devxy_login:
     default: false
 
-  codeberg_client_id:
+  devxy_client_id:
     client: false
     default: ''
-    validator: ValidateCodebergToggle
+    validator: ValidateDevxyToggle
 
-  codeberg_secret:
+  devxy_secret:
     client: false
     default: ''
     secret: true
-    validator: ValidateCodebergToggle
+    validator: ValidateDevxyToggle

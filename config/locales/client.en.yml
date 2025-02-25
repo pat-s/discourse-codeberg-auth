@@ -1,7 +1,7 @@
 en:
   js:
     login:
-      codeberg:
-        message: 'Authenticating with Codeberg'
-        name: 'Codeberg'
-        title: 'Log in with Codeberg'
+      devxy:
+        message: 'Authenticating with Devxy'
+        name: 'Devxy'
+        title: 'Log in with Devxy'

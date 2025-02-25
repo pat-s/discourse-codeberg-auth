@@ -1,9 +1,9 @@
 en:
   site_settings:
-    codeberg_client_id: 'Codeberg OAuth2 client id'
-    codeberg_secret: 'Codeberg OAuth2 client secret'
-    enable_codeberg_login: 'Allow users to log in with Codeberg'
+    devxy_client_id: 'Devxy OAuth2 client id'
+    devxy_secret: 'Devxy OAuth2 client secret'
+    enable_devxy_login: 'Allow users to log in with Devxy'
 
-  discourse_codeberg_auth:
+  discourse_devxy_auth:
     errors:
-      cannot_remove: 'Credentials cannot be cleared while Codeberg login is enabled'
+      cannot_remove: 'Credentials cannot be cleared while Devxy login is enabled'

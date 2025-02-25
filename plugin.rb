@@ -1,25 +1,25 @@
 # frozen_string_literal: true
 
-# name: discourse-codeberg-auth
-# about: Allows users to sign in with their Codeberg account
+# name: discourse-devxy-auth
+# about: Allows users to sign in with their Devxy account
 # version: 1.0.0
-# authors: Regalijan
-# url: https://github.com/Regalijan/discourse-codeberg-auth
+# authors: pat-s
+# url: https://github.com/pat-s/discourse-devxy-auth
 
-enabled_site_setting :enable_codeberg_login
+enabled_site_setting :enable_devxy_login
 
 require 'base64'
-require_relative 'lib/validators/CodebergLoginToggle'
+require_relative 'lib/validators/DevxyLoginToggle'
 
-register_svg_icon 'codeberg-auth-codeberg-logo' if respond_to?(:register_svg_icon)
+register_svg_icon 'devxy-auth-devxy-logo' if respond_to?(:register_svg_icon)
 
-class CodebergAuthenticator < Auth::ManagedAuthenticator
-  class CodebergStrategy < OmniAuth::Strategies::OAuth2
-    option :name, 'codeberg'
+class DevxyAuthenticator < Auth::ManagedAuthenticator
+  class DevxyStrategy < OmniAuth::Strategies::OAuth2
+    option :name, 'devxy'
     option :scope, 'openid profile email'
 
     option :client_options,
-           site: 'https://codeberg.org/login/oauth/',
+           site: 'https://git.devxy.io/login/oauth/',
            authorize_url: 'authorize',
            token_url: 'access_token'
 
@@ -42,7 +42,7 @@ class CodebergAuthenticator < Auth::ManagedAuthenticator
     end
 
     def name
-      'codeberg'
+      'devxy'
     end
 
     def raw_info
@@ -55,11 +55,11 @@ class CodebergAuthenticator < Auth::ManagedAuthenticator
   end
 
   def enabled?
-    SiteSetting.enable_codeberg_login?
+    SiteSetting.enable_devxy_login?
   end
 
   def name
-    'codeberg'
+    'devxy'
   end
 
   def primary_email_verified?(auth_token)
@@ -67,13 +67,13 @@ class CodebergAuthenticator < Auth::ManagedAuthenticator
   end
 
   def register_middleware(omniauth)
-    omniauth.provider CodebergStrategy,
+    omniauth.provider DevxyStrategy,
                       setup: lambda { |env|
                         strategy = env['omniauth.strategy']
-                        strategy.options[:client_id] = SiteSetting.codeberg_client_id
-                        strategy.options[:client_secret] = SiteSetting.codeberg_secret
+                        strategy.options[:client_id] = SiteSetting.devxy_client_id
+                        strategy.options[:client_secret] = SiteSetting.devxy_secret
                       }
   end
 end
 
-auth_provider authenticator: CodebergAuthenticator.new, icon: 'codeberg-auth-codeberg-logo'
+auth_provider authenticator: DevxyAuthenticator.new, icon: 'devxy-auth-devxy-logo'
